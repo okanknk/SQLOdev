@@ -5,3 +5,5 @@ Bu repo'da [Patika](wwww.patika.dev)'daki Baslangic Seviye Veri Bilimi Patikasin
 Odev2'nin cozumu eklendi
 
 Odev3'un cozumu eklendi
+
+Odev4'un cozumu eklendi
