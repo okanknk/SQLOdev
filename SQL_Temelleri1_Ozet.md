@@ -55,6 +55,7 @@ WHERE country LIKE 'A%';
 ```
 
 Yukaridaki ornekte country tablosundaki country sutununda bas harfi "A" olan ulkeleri karsimiza getiriyoruz.
+
 % isaretinin bu sorgudaki anlami sudur: % isaretinin oldugu yerde hic bir karakter olmayabilir, tek bir karakter olabilir, ya da birden fazla karakter olabilir.
 
 ```
@@ -76,3 +77,38 @@ Yukaridaki ornekte son harfi n olan ve kesinlikle en az 4 harften olusan (cunku 
 ## ILIKE
 
 Islevi ve kullanim sekli LIKE ile bire bir ayni olmakla beraber, tek farki case sensitive konusundadir. LIKE komutu buyuk ya da kucuk karaktere duyarliyken, ILIKE buyuk ya da kucuk karakter ayirt etmez.
+
+## SELECT DISTINCT
+
+Distinct anahtar kelimesi ile istedigimiz bir sutundaki benzersiz verileri cagirabiliriz. Bu sorgu sonunda tekrar eden veriler tek bir veri olarak karsimiza gelir.
+
+```
+SELECT DISTINCT replacemet_cost FROM film;
+```
+
+Yukaridaki sorgunun sonucunda karsimiza sadece "replacement_cost" sutunu gelecektir, ancak o sutundaki her deger benzersiz olacaktir.
+
+```
+SELECT DISTINCT replacement_cost, rental_rate FROM film;
+```
+
+Yukaridaki sorguda DISTINCT anahtar kelimesi ile birden fazla sutunun benzersiz degerlerine bakiyoruz gibi anlasilabilir. Ancak bu sorgu sonucunda sutun bazinda bakacak olursak, her sutun kendi icinde tekrar eden verileri verebilecektir. Burada benzersiz olan her bir satir icin karsimiza gelen veri kumesidir.
+
+## SELECT COUNT
+
+Count bir fonksiyondur. SELECT COUNT kullaniminda bize sonuc olarak bir liste yerine tek bir sayi doner. Bu sayi da bir tabloda, bir sutunda yada bir kac sutunda bizim filtremize uyan kac tane verinin oldugudur.
+
+```
+SELECT COUNT(*) FROM country
+WHERE city ILIKE '%R';
+```
+
+Yukaridaki sorgunun sonucunda "country" tablosunun sutunu olan "city" icerisinde sonu buyuk ya da kucuk R ile biten kac tane sehrin oldugu bilgisi gelecektir.
+
+SELECT COUNT(*) kullanimindan sonra WHERE ile bazi lojik operatorler kullanarak filtremizi birden fazla sutun uzerinde de uygulayabiliriz.
+
+```
+SELECT COUNT(DISTINCT replacement_cost) FROM film;
+```
+
+Yukaridaki sorgunun sonucunda "film" tablosunun sutunu olan "replacement_cost" icerisinde kac tane benzersiz verinin oldugu bilgisi gelecektir. COUNT ile DISTINCT anahtar kelimeleri yukaridaki ornekte oldugu gibi birlikte kullanilabilir.
