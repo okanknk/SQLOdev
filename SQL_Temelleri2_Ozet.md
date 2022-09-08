@@ -41,3 +41,35 @@ ORDER BY rental_rate ASC, length DESC;
 ```
 
 Yukaridaki sorgunun sonucu ornek vererek aciklayacak olursak, diyelim ki veri tablomuzda rental_rate degerleri (0.99, 2.99, 4.99) degerlerinden olusuyor olsun. Bu sorgu sonucunda rental_rate degeri 0.99 olan verileri en ustte gorecegiz, ancak bu veriler kendi aralarinda uzunluklari azalacak sekilde siralaniyor olacaklar. 0.99 grubu bittiginde, hemen ardina rental_rate degeri 2.99 olan grup uzunluklarina gore azalacak sekilde siralanarak getirilecek.
+
+## LIMIT
+
+Cok fazla veri barindiran tablolarda sorgu sonucunda onumuze tum verilerin sunulmasindansa belli sayida verileri gormek isteyebiliriz. LIMIT anahtar kelimesi bu islev icin kullanilir.
+
+```
+SELECT * FROM film
+WHERE rental_rate = 4.99 AND replacement_cost = 14.99
+ORDER BY length DESC
+LIMIT 5;
+```
+
+Yukaridaki sorgu sonucunda uygulanan filtreler ve siralama kosulu dikkate alindiktan sonra, cikti olarak sadece 5 tane veri gorecegiz.
+
+Hiyerarsik olarak LIMIT anahtar kelimesi en sona yazilir.
+
+## OFFSET
+
+OFFSET anahtar kelimesi, sorgu sonucunda onumuze cikacak verilerde belli sayida verinin atlanmasi/yok sayilmasi amaci ile kullanilir.
+
+```
+SELECT * FROM country
+LIMIT 10;
+```
+[Capture](SQLOdev\offset1.png)
+
+```
+SELECT * FROM country
+OFFSET 6
+LIMIT 10;
+```
+[Capture](SQLOdev\offset2.png)
