@@ -65,11 +65,11 @@ OFFSET anahtar kelimesi, sorgu sonucunda onumuze cikacak verilerde belli sayida 
 SELECT * FROM country
 LIMIT 10;
 ```
-[Capture](C:\Users\okako\Desktop\TEST\SQLOdev\offset1.PNG)
+![Capture](SQLOdev/offset1.png)
 
 ```
 SELECT * FROM country
 OFFSET 6
 LIMIT 10;
 ```
-[Capture](C:\Users\okako\Desktop\TEST\SQLOdev\offset2.PNG)
+![Capture](SQLOdev/offset2.png)
