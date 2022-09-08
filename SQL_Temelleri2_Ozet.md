@@ -73,3 +73,5 @@ OFFSET 6
 LIMIT 10;
 ```
 ![Images](Images/offset2.PNG)
+
+Sonuclardan da goruldugu uzere "OFFSET 6" ifadesi ilk sorgu sonucunda karsimiza gelen "Afghanistan, ..., Argentina" ulkeleri yok sayarak, bir sonraki veri ilk eleman olacak sekilde sorgu sonucunu onumuze getirdi.
